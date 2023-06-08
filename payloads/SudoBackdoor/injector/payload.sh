@@ -14,7 +14,7 @@ mkdir -p $MOCK_BASH_BUNNY_USB_DIR $PAYLOAD_DIR $LOOT_DIR
 chmod 777 $PAYLOAD_DIR
 
 # Create http server to host payloads
-python3 -m http.server 8081 --directory $PAYLOAD_DIR --bind 0.0.0.0 > /dev/null 2>&1 &
+python3 -m http.server --directory $PAYLOAD_DIR 8081 > /dev/null 2>&1 &
 
 # wait until port is listening
 while ! nc -z localhost 8081; do sleep 0.2; done
